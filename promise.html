@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Promises</h1>
+</body>
+<script>
+    // console.log("a")
+    // setTimeout(()=>{
+    //     console.log("B")
+ 
+    // },2000)
+    // console.log("c");
+    // let data=new Promise((res,rej)=>{
+
+    // })
+
+    let interview=function(){
+        return new Promise((res,rej)=>{
+            res("interview going")
+        })
+    }
+
+
+    interview().then((result)=>{
+        return happen(result)
+    }).then((result)=>{
+        return done()
+    }).then((result)=>{
+        console.log("finished"+ result)
+    })
+
+
+    
+    let happen=function(){
+        return new Promise((res,rej)=>{
+            res("interview happen")
+        })
+
+    }
+
+    let done=function(){
+        return new Promise((res,rej)=>{
+            res("interview done")
+        })
+    }
+
+</script>
+</html>

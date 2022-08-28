@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function getName(city,city1){
+        console.log(this.name,city,city1);
+    }
+
+    let Person={
+        name:"parul"
+    }
+
+    Function.prototype.myBind=function(obj,...arg1){
+       let func=this;
+    //    =this
+        return function(...arg2){
+           return func.apply(obj,[...arg1,...arg2])               
+        }
+    }
+
+    let funback=getName.myBind(Person,"hp");
+    funback('Banglore');
+
+</script>
+</html>

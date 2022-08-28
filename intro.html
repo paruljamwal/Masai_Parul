@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>sum pairs</h1>
+</body>
+
+<script>
+    let a=[8,6,4,2]
+    let t=6;
+    let obj={};
+    for(let i=0;i<a.length;i++){
+        var n= a[i];
+        let s=t-n;
+        // console.log(s,"s");
+        if(obj[s]!==undefined){
+           console.log(obj[t-n],i);
+        }
+        obj[n]=i;
+        // if(obj[t-n]!==undefined){
+        // }
+        // obj[n]=i;
+    }
+
+    console.log(obj)
+</script>
+</html>

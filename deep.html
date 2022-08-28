@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Deep Copy</h1>
+    <script>
+        let obj1={
+            name:"masai",
+            adrress:{
+                state:"banglore",
+                city:"sdfds"
+            }
+        }
+
+        // let obj2=Object.assign({},obj1); //shalow copy;
+        let obj2=JSON.parse(JSON.stringify(obj1)) //deep copy;
+        // let obj2={...obj1} //shallo copy
+        obj2.name="parul";
+        console.log(obj2);
+        console.log(obj1);
+        obj2.adrress.state="school";
+        console.log(obj2.adrress.state);
+        console.log(obj1.adrress.state);
+
+    </script>
+</body>
+</html>

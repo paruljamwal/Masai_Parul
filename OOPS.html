@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+      class Person{
+            constructor(name,age){
+                this.name=name;
+                this.age=age;
+            }
+            #balance=100;
+
+            set balance(amount){
+                if(isNaN(amount)){
+                    throw new Error('Amount is not a valid input')
+                }
+                this.#balance=amount;
+            }
+            get balance(){
+                return this.#balance
+            }
+            
+            details(balance=0){
+                console.log(` balance ${this.#balance} name ${this.name} age ${this.age}`)
+            }
+            set details(pas){
+              console.log(`${pas} Essential info...`);
+            }
+            get details(){
+                console.log(`${this.name} Essential info`);
+            }
+
+            eat(){
+                console.log(`Eating food`)
+            }
+
+            walk(){
+                console.log(`walking`);
+            }
+
+
+            #sleep(gn){
+                console.log(`${gn} sleeping`);
+            }
+
+            setsleep(gn="te"){
+                console.log(gn)
+            }
+            getsleep(){
+                console.log("Sleeping");
+            }
+
+        }
+
+
+          let P1=new Person("Parul",20,balance=400)
+          P1.balance=4500
+            P1.setsleep("sdfs") 
+          console.log(P1.getsleep);
+        // P1.details()
+        
+        class Developer extends Person{
+            constructor(name,age,id){
+                super(name,age)
+                this.id=id;
+                // console.log(this.#balance)
+            }  
+            coding(){
+                console.log(`Develope something`);
+              }
+        }
+
+       let Dev= new Developer("akshu",22,08907)
+
+    //    console.log(Dev);
+
+
+       class Manager extends Person {
+           constructor(name,age,work){
+            super(name,age)
+            this.work=work;
+           }
+           Managing(){
+            console.log(`Managing Tasks`);
+           }
+       }
+
+        let mang= new Manager("Shalu",30,"Task Managing")
+        // console.log(mang.details());
+    </script>
+</head>
+<body>
+    <h1>OOPS in js</h1>
+
+</body>
+</html>

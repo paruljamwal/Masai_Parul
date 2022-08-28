@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Closure Example</h1>
+ 
+ 
+    <script>
+     
+    //     function Toogle(){
+    //      var val=arguments
+    //      var index=-1;
+    //     return function(){
+    //         index=index+1;
+    //         if(index>=val.length){
+    //            index=0
+    //         }
+    //         return val[index]
+    //       }
+    //     }
+         
+    //    let tog= Toogle(1,2,3)
+    //     console.log(tog())
+    //     console.log(tog())
+    //     console.log(tog())
+    //     console.log(tog())
+    //     console.log(tog())
+    //     console.log(tog())
+    //     console.log(tog())
+    //     console.log(tog())
+
+
+    // function fun(a,...b){
+    //     console.log(arguments.length)
+    // } 
+    // fun(3,"michel","hello")
+
+    // var a;
+    // function x(){
+    //     a=10;
+
+    // }
+
+    // console.log(a);
+
+
+// function Person(){
+//     console.log(this);
+// }
+// let a=10;
+// function x(){
+//     a=20;
+// }
+
+// let arr=[];
+// for(let i=1;i<5;i++){
+//     arr.push(()=>{
+//         console.log(i);
+//     })
+// }
+
+// arr.forEach((e)=>e())
+
+// let a=2;
+// {
+// let a=3
+// }
+
+// const amar={money:100};
+// const akbar=Object.create(amar)
+// const anthny=Object.create(akbar)
+// console.log(anthny.money);
+
+
+function Car(n,p){
+    this.name=n;
+    this.price=p;
+}
+
+function Truck(){
+    Car.call(this,"Vol","12lc");
+    this.fuel="d"
+}
+
+console.log(new Truck().name);
+
+    </script>
+</body>
+</html>
