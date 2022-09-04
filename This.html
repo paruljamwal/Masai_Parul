@@ -1,49 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <h1> This keyword </h1>
-    <p>1. Depends on how we call function not like scope chainig where we call fun()</p>
-    <p>2. If we calll function directly so it attaches with window obj globally (window.functionName() || (functionName()) both are same..... ) </p>
-    <p>3. By using this we can reUse fun with any obj, It helps in reusiblity.. </p>
+  </head>
+  <body>
+    <h1>This keyword</h1>
+    <p>
+      1. Depends on how we call function not like scope chainig where we call
+      fun()
+    </p>
+    <p>
+      2. If we calll function directly so it attaches with window obj globally
+      (window.functionName() || (functionName()) both are same..... )
+    </p>
+    <p>
+      3. By using this we can reUse fun with any obj, It helps in reusiblity..
+    </p>
 
-   
     <script>
-        let obj1={
-            name:"jinnu",
-            age:21,
-            displayName:displayName
-        }
+      let obj1 = {
+        name: "jinnu",
+        age: 21,
+        displayName: displayName,
+      };
 
+      let obj2 = {
+        name: "pinnu",
+        age: 22,
+        displayName: displayName,
+      };
 
-        let obj2={
-            name:"pinnu",
-            age:22,
-            displayName:displayName
-        }
+      //regular fun
+      function displayName() {
+        console.log(this.name);
+      }
 
+      obj2.displayName(); // depends how we call not on where we call
+      obj1.displayName();
 
-        function displayName(){
-            console.log(this.name)
-        }
+      // if name is present globally
+      let name = "tinnu";
+      displayName();
 
+      //using aerro function (its not depend on how we call fun but depends on wehere we call...)
 
-//
-       // obj2.displayName() // depends how we call not on where we call
-        //obj1.displayName();
+      let details = {
+        name: "jerry",
+        sayHello: function () {
+          console.log("Hello", this);
+          let sayBye = function () {
+            console.log("Byee", this); //attches window scope
+          };
+          sayBye(); // calling as it is
+        },
+      };
 
+      let details2 = {
+        name: "jerry",
+        sayHello: function () {
+          console.log("Hello", this);
+          let ByeAerro = () => {
+            console.log("Byee", this); //attches window scope
+          };
+          ByeAerro(); // now its not take care how i call fun..
+        },
+      };
 
-        // if name is present globally
-        let  name="tinnu";
-        displayName();
-
+      details.sayHello();
+      details2.sayHello();
     </script>
-
-
-</body>
+  </body>
 </html>
