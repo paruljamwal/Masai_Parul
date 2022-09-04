@@ -10,15 +10,52 @@
     <h1>CallApplyBind</h1>
 
     <script>
-         function displayName(){
-            console.log("parul")
-        }
+        //  function displayName(){
+        //     console.log("parul")
+        // }
         // every fun have access to the property call which can be use to invoke particular function
-        displayName();
-        displayName.apply();
-        displayName.call();
-       let b= displayName.bind();
-       b();
+    //     displayName();
+    //     displayName.apply();
+    //     displayName.call();
+    //    let b= displayName.bind();
+    //    b();
+
+
+    // Example*************************
+
+    //Reusing charge Battery method without duplicacy .............
+
+    let participant1={
+        name:"lily",
+        battery:70,
+        chargeBattery:function(a,b){
+            // this.battery=100;
+            this.battery=this.battery+a+b;
+
+        }
+    }
+ 
+//want to charge battery but not by copy the method so at that time call come into picture
+//we can borrow one obj mthd to another obj....... 
+    let participant2={
+        name:"jinny",
+        battery:30
+    }
+
+    // participant1.chargeBattery.call(participant2);
+    // console.log(participant1); // before charge 70
+    // console.log(participant1.chargeBattery); // after charge 100
+    // console.log(participant2); // increase 30 to 100
+    // Also pass arguments..........
+    participant1.chargeBattery.call(participant2,20,30);
+    console.log(participant2); // increase 30 to 80 (with dynamic arg)
+    //Apply  arg pass inside array
+    participant1.chargeBattery.apply(participant2,[40,50]);
+    console.log(participant2)
+    //Bind similar to call return a function we can call anytime...
+    let bin= participant1.chargeBattery.bind(participant2,20,30);
+    bin();
+    console.log(participant2);
     </script>
 </body>
 </html>
