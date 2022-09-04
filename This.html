@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> This keyword </h1>
+    <p>1. Depends on how we call function not like scope chainig where we call fun()</p>
+    <p>2. If we calll function directly so it attaches with window obj globally (window.functionName() || (functionName()) both are same..... ) </p>
+    <p>3. By using this we can reUse fun with any obj, It helps in reusiblity.. </p>
+
+   
+    <script>
+        let obj1={
+            name:"jinnu",
+            age:21,
+            displayName:displayName
+        }
+
+
+        let obj2={
+            name:"pinnu",
+            age:22,
+            displayName:displayName
+        }
+
+
+        function displayName(){
+            console.log(this.name)
+        }
+
+
+//
+       // obj2.displayName() // depends how we call not on where we call
+        //obj1.displayName();
+
+
+        // if name is present globally
+        let  name="tinnu";
+        displayName();
+
+    </script>
+
+
+</body>
+</html>
