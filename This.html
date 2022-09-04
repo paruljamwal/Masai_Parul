@@ -71,6 +71,17 @@
 
       details.sayHello();
       details2.sayHello();
+
+
+
+
+      // aerro fun in global scope
+      let sayHii=()=>{
+        console.log("Hii...",this);
+      }
+
+      sayHii();
+
     </script>
   </body>
 </html>
