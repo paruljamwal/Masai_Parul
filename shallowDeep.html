@@ -13,7 +13,7 @@
     <h1>Ways to do copy</h1>
     <ol>
         <li>By Assignment operator (=)</li> // it creates a shallow copy....
-        <li>By Object.assign({},AnyValue)  </li> // it takes 2 arguments 1 refrence of obj and 2 which u want to copy..
+        <li>By Object.assign({},AnyValue)  </li> // it takes 2 arguments 1 refrence of obj and 2 which u want to copy.. (creating a deep copy ). But if we have nested obj (obj inside obj) Object.assign not give full copy.....
         <li>By Spread operater (...AnyValue)</li>
         <li>By JSON.parse((JSON.stringify(AnyValue))</li> // creates a deep copy...... use when their is no method.....
         <p>If method is present && we try to do copy using jsonStringfy it gives partial copy (not able to copying the function completly)</p>
@@ -48,25 +48,92 @@
        // console.log(copiedValue2); //jiya
 
 
-       let originalValue={
+    //    let originalValue={
+    //         name:"jini",
+    //         age:20,
+    //         getName:function(){
+    //             return this.name;
+    //         }
+    //     } 
+
+
+        //let copiedValue2= JSON.parse(JSON.stringify(originalValue));
+        //console.log(originalValue); // {name: 'jini', age: 20, getName: ƒ}
+        //console.log(copiedValue2);  // {name: 'jini', age: 20}
+
+        // If method is present && we try to do copy using jsonStringfy it gives partial copy (not able to copying the function completly)
+        //copiedValue2.name="jiya";
+        //console.log(originalValue); //{name: 'jini', age: 20, getName: ƒ}
+       // console.log(copiedValue2);  //{name: 'jiya', age: 20}  function is missing json not capable to do nested copy....
+
+        
+       
+    //    let originalValue={
+    //         name:"jini",
+    //         age:20,
+    //         getName:function(){
+    //             return this.name;
+    //         }
+    //     } 
+
+
+
+
+       // copying using Object.assign({},Value);
+      // let copiedValue =Object.assign({},originalValue);
+     //  console.log(originalValue); //{name: 'jini', age: 20, getName: ƒ}
+      // console.log(copiedValue);  //{name: 'jini', age: 20, getName: ƒ}  got the complte copy
+       
+
+       //copiedValue.name="pinu";
+      // copiedValue.age=21
+  
+     //  console.log(originalValue); //{name: 'jini', age: 20, getName: ƒ}
+      // console.log(copiedValue); //{name: 'pinu', age: 21, getName: ƒ}
+
+
+ 
+
+     //Nested Obj**********
+
+      let originalValue={
             name:"jini",
             age:20,
             getName:function(){
                 return this.name;
+            },
+            address:{
+                city:"hp",
+                country:"India"
             }
         } 
 
 
-        let copiedValue2= JSON.parse(JSON.stringify(originalValue));
-        console.log(originalValue); // {name: 'jini', age: 20, getName: ƒ}
-        console.log(copiedValue2);  // {name: 'jini', age: 20}
+        //copying using spread operator...
+        let copiedValue={...originalValue};
+        //console.log(originalValue); //{name: 'jini', age: 20, address: {…}, getName: ƒ}
+       // console.log(copiedValue); //{name: 'jini', age: 20, address: {…}, getName: ƒ}
+        
+        // mutation**
+       // copiedValue.name="lily";
+       // copiedValue.address.city="Banglore";
+        //console.log(originalValue); //{name: 'jini', age: 20 ,address: {city: 'Banglore', country: 'India'}
+       // console.log(copiedValue); //name: 'lily', age: 20, address: {city: 'Banglore', country: 'India'}
+       
+        
+       copiedValue={
+        ...copiedValue,
+        name:"tini",
+        address:{
+            ...copiedValue.address,
+            city:"Banglore"
+        }
+       }
 
-        // If method is present && we try to do copy using jsonStringfy it gives partial copy (not able to copying the function completly)
-        copiedValue2.name="jiya";
-        console.log(originalValue); //{name: 'jini', age: 20, getName: ƒ}
-        console.log(copiedValue2);  //{name: 'jiya', age: 20}  function is missing json not capable to do nested copy....
 
-           
+       console.log(originalValue);
+       console.log(copiedValue);
+
 
     </script>
 </body>
