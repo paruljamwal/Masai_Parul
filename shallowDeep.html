@@ -13,17 +13,18 @@
     <h1>Ways to do copy</h1>
     <ol>
         <li>By Assignment operator (=)</li> // it creates a shallow copy....
-        <li>By Object.assign({},AnyValue) </li>
+        <li>By Object.assign({},AnyValue)  </li> // it takes 2 arguments 1 refrence of obj and 2 which u want to copy..
         <li>By Spread operater (...AnyValue)</li>
-        <li>By JSON.parse((JSON.stringify(AnyValue))</li> // creates a deep copy......
+        <li>By JSON.parse((JSON.stringify(AnyValue))</li> // creates a deep copy...... use when their is no method.....
+        <p>If method is present && we try to do copy using jsonStringfy it gives partial copy (not able to copying the function completly)</p>
     </ol>
 
 
     <script>
-        let originalValue={
-            name:"jini",
-            age:20
-        }
+        // let originalValue={
+        //     name:"jini",
+        //     age:20
+        // }
 
        // let copiedValue=originalValue; // copied by asignment op...
         //console.log(originalValue);
@@ -36,16 +37,36 @@
         
 
         // copied by JSON.parse(JSON.stringify())
-         let copiedValue2= JSON.parse(JSON.stringify(originalValue));
-         console.log(originalValue); //jini
-        console.log(copiedValue2);  //jira
+         //let copiedValue2= JSON.parse(JSON.stringify(originalValue));
+        // console.log(originalValue); //jini
+        //console.log(copiedValue2);  //jira
 
 
         // do some mutation....
-        copiedValue2.name="jiya";
-        console.log(originalValue); //jini
-        console.log(copiedValue2); //jiya
+        //copiedValue2.name="jiya";
+        //console.log(originalValue); //jini
+       // console.log(copiedValue2); //jiya
 
+
+       let originalValue={
+            name:"jini",
+            age:20,
+            getName:function(){
+                return this.name;
+            }
+        } 
+
+
+        let copiedValue2= JSON.parse(JSON.stringify(originalValue));
+        console.log(originalValue); // {name: 'jini', age: 20, getName: ƒ}
+        console.log(copiedValue2);  // {name: 'jini', age: 20}
+
+        // If method is present && we try to do copy using jsonStringfy it gives partial copy (not able to copying the function completly)
+        copiedValue2.name="jiya";
+        console.log(originalValue); //{name: 'jini', age: 20, getName: ƒ}
+        console.log(copiedValue2);  //{name: 'jiya', age: 20}  function is missing json not capable to do nested copy....
+
+           
 
     </script>
 </body>
