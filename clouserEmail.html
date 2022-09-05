@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Closure Async await promises</h1>
+    <script>
+        let name=["paru@gmail.com","akshu@gmail.com","parsu@gmail.com","shivu@gmail.com"];
+ 
+        function delay(i){
+            return new Promise((res,rej)=>{
+                setTimeout(() => {
+                 res(`Email sent to ${i}`);
+                },1000);
+            })
+        }
+
+
+       async function sending(){
+        for(let user of name){
+            const result=await delay(user); 
+            console.log(result);
+        }
+        console.log(" Yeah Mail send successFully !")
+        }
+
+
+        sending();
+
+
+
+
+    </script>
+</body>
+</html>
