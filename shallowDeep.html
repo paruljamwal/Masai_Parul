@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ShallowDeep Copy</h1>
+    <p>In case of primitive (string,number,null,undefined,bollean) datatypes  its not doing anything (behave deep copy --> means both variables have diifer. memory ref...)</p>
+    <p>Js do shallow copy by defalut for Array , functions, obj...</p>
+    <h1>Ways to do copy</h1>
+    <ol>
+        <li>By Assignment operator</li>
+        <li>By Object.assign({},AnyName) </li>
+        <li>By Spread operater (...AnyName)</li>
+    </ol>
+    <script>
+        let originalValue={
+            name:"jini",
+            age:20
+        }
+
+        let copiedValue=originalValue;
+        console.log(originalValue);
+        console.log(copiedValue);
+
+        // Do some Mutation......
+        copiedValue.name="Minni";
+        console.log(originalValue);
+        console.log(copiedValue); // it updates the real value as well  means its doing shaloow copy (it points to same memory ref.....)
+
+    </script>
+</body>
+</html>
