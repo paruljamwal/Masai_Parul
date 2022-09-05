@@ -21,12 +21,28 @@
     }
 
 
-    let user1=new User("jinnu"); // when we create obj using constructer every obj take memory sepratly 
-    let user2=new User("tinnu");
+     let user1=new User("jinnu"); // when we create obj using constructer every obj take memory sepratly 
+     let user2=new User("tinnu");
 
 
     user1.getDetails();
     user2.getDetails();   // have solution prototype
+
+ //*******************************************
+
+ function Userd(name){
+  this.name=name;
+ }
+
+
+ Userd.prototype.getDetail=function(){
+    console.log(this.name);
+ }
+
+  let userA=new Userd("Pari"); // create new obj
+  let userB=new Userd("mayra");
+ userB.getDetail();
+ userA.getDetail();
 
     </script>
 </body>
