@@ -12,24 +12,40 @@
     <p>Js do shallow copy by defalut for Array , functions, obj...</p>
     <h1>Ways to do copy</h1>
     <ol>
-        <li>By Assignment operator</li>
-        <li>By Object.assign({},AnyName) </li>
-        <li>By Spread operater (...AnyName)</li>
+        <li>By Assignment operator (=)</li> // it creates a shallow copy....
+        <li>By Object.assign({},AnyValue) </li>
+        <li>By Spread operater (...AnyValue)</li>
+        <li>By JSON.parse((JSON.stringify(AnyValue))</li> // creates a deep copy......
     </ol>
+
+
     <script>
         let originalValue={
             name:"jini",
             age:20
         }
 
-        let copiedValue=originalValue;
-        console.log(originalValue);
-        console.log(copiedValue);
+       // let copiedValue=originalValue; // copied by asignment op...
+        //console.log(originalValue);
+        //console.log(copiedValue);
 
         // Do some Mutation......
-        copiedValue.name="Minni";
-        console.log(originalValue);
-        console.log(copiedValue); // it updates the real value as well  means its doing shaloow copy (it points to same memory ref.....)
+        //copiedValue.name="Minni";
+       // console.log(originalValue);
+        //console.log(copiedValue); // it updates the real value as well  means its doing shaloow copy (it points to same memory ref.....)
+        
+
+        // copied by JSON.parse(JSON.stringify())
+         let copiedValue2= JSON.parse(JSON.stringify(originalValue));
+         console.log(originalValue); //jini
+        console.log(copiedValue2);  //jira
+
+
+        // do some mutation....
+        copiedValue2.name="jiya";
+        console.log(originalValue); //jini
+        console.log(copiedValue2); //jiya
+
 
     </script>
 </body>
