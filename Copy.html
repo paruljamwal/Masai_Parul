@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Copy Text...</h1>
+    <p id="text" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore similique laudantium aut perspiciatis ut molestias fugit mollitia est, quis neque voluptate distinctio, soluta a dicta! Hic asperiores vitae harum non?</p>
+    <button id="copy" >Copy</button>
+</body>
+</html>
+
+<script>
+
+    const clipToClipboard=(str)=>{
+       const el=document.createElement("textarea");
+       el.value=str;
+       document.body.appendChild(el);
+       el.select(); //select
+       document.execCommand("copy");
+       document.body.removeChild(el);
+    }
+
+   function clickHandle(e){
+    let text=document.getElementById("text");
+    clipToClipboard(text.innerText);
+    
+   }
+
+ 
+    document.getElementById("copy").addEventListener("click",clickHandle)
+</script>
+
+
+
