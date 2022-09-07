@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Obj....</h1>
+
+    <script>
+        const items={
+            "first": new Date(),
+            "second":2,
+            "third":"test",
+            "four":4,
+            "five":"abc"
+        }
+
+
+        for(let key in items){
+         if(key=='second'){
+            console.log(key ,items[key])
+         }
+        }
+
+
+    </script>
+
+
+</body>
+</html>
