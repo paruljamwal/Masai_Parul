@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Scoping let const var</h1>
+    <script>
+        function abc(){
+            if(1){
+                var a=5; 
+                let b=6;
+                const c=7;
+            }
+            console.log(a); //5
+            console.log(b);  //Uncaught ReferenceError: b is not defined
+            console.log(c); //Uncaught ReferenceError: c is not defined
+        }
+
+        abc()
+    </script>
+</body>
+</html>
