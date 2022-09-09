@@ -32,10 +32,29 @@
             console.log(str.replace("H","J")); //Jello, My name is Parul
             console.log(str.replace(/a/g,"J")); //Hello, My nJme is PJrul
 
+          // remove character's
+          console.log(str.substring(3,8)); //lo, M
 
+          //remove first char..
+          console.log(str.substring(1,str.length)); //ello, My name is Parul
+          
+          //remove last char..
+          console.log(str.substring(0,str.length-1)); //Hello, My name is Paru
 
+          //remove specific char..
+          console.log(str.split("P")); //['Hello, My name is ', 'arul']
 
+          //reverse string.... (str -> convert array use join())
+          console.log(str.split("").reverse()); //['l', 'u', 'r', 'a', 'P', ' ', 's', 'i', ' ', 'e', 'm', 'a', 'n', ' ', 'y', 'M', ' ', ',', 'o', 'l', 'l', 'e', 'H']
 
+          console.log(str.split("").reverse().join("")); //luraP si eman yM ,olleH
+
+          let str1="   parul   "
+         // remove extra spaces....
+         console.log(str1); //   parul   
+         console.log(str1.trim()); //parul
+         console.log(str1.trimStart());//parul   
+         console.log(str1.trimEnd());//   parul
 
     </script>
 </body>
