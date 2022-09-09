@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        String Methods.....
+    </h1>
+
+    <script>
+        let str="Hello, My name is Parul"
+
+        //convert into single array 
+        console.log(str.split()); //['Hello, My name is Parul']
+        console.log([str]); //['Hello, My name is Parul']
+      
+        //convert by space into array 
+        console.log(str.split(" ")); // ['Hello,', 'My', 'name', 'is', 'Parul']
+      
+        //convert by character into array 
+        console.log([...str]); //['H', 'e', 'l', 'l', 'o', ',', ' ', 'M', 'y', ' ', 'n', 'a', 'm', 'e', ' ', 'i', 's', ' ', 'P', 'a', 'r', 'u', 'l']
+        console.log(str.split("")); //['H', 'e', 'l', 'l', 'o', ',', ' ', 'M', 'y', ' ', 'n', 'a', 'm', 'e', ' ', 'i', 's', ' ', 'P', 'a', 'r', 'u', 'l']
+
+
+
+    </script>
+</body>
+</html>
