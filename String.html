@@ -25,6 +25,16 @@
         console.log([...str]); //['H', 'e', 'l', 'l', 'o', ',', ' ', 'M', 'y', ' ', 'n', 'a', 'm', 'e', ' ', 'i', 's', ' ', 'P', 'a', 'r', 'u', 'l']
         console.log(str.split("")); //['H', 'e', 'l', 'l', 'o', ',', ' ', 'M', 'y', ' ', 'n', 'a', 'm', 'e', ' ', 'i', 's', ' ', 'P', 'a', 'r', 'u', 'l']
 
+        //convert by specific character into array 
+         console.log(str.split("M")); // ['Hello, ', 'y name is Parul']
+
+        //convert by replace character into array 
+            console.log(str.replace("H","J")); //Jello, My name is Parul
+            console.log(str.replace(/a/g,"J")); //Hello, My nJme is PJrul
+
+
+
+
 
 
     </script>
