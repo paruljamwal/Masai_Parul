@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Memoization......</h1>
+    <p>Memoization is a form of caching where the return value of a function is cached based on its parameters</p>
+    <p>If the parameter of that function is not changed the cached version of the function is returned.</p>
+    
+    
+    <script>
+      function add(num){
+        return num+256;
+      }
+
+      let a=add(20);
+      console.log(a);
+      let b= add(40);
+      console.log(b);
+      let c= add(20);
+      console.log(c);
+    </script>
+</body>
+</html>
