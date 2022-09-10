@@ -13,16 +13,61 @@
     
     
     <script>
-      function add(num){
-        return num+256;
-      }
 
-      let a=add(20);
-      console.log(a);
-      let b= add(40);
-      console.log(b);
-      let c= add(20);
-      console.log(c);
+     // computing same parameter agin & again not a good practice   
+    //   function add(num){
+    //     return num+256;
+    //   }
+
+    //   let a=add(20);
+    //   console.log(a);
+    //   let b= add(40);
+    //   console.log(b);
+    //   let c= add(20);
+    //   console.log(c);
+
+
+    // *********Memoized way*********
+
+
+    function memoizedAdd(){
+
+        let cache={};
+        return function(num){
+            console.log(cache, "cache value");
+            if(num in cache){
+                console.log("cached value");
+                return cache[num]
+            }
+            else{
+                cache[num]=num+256;
+                return cache[num];
+            }
+        }
+
+
+    }
+
+    let Memoized=memoizedAdd()
+
+   let a= Memoized(20); // first time
+   console.log(a);
+  let b=  Memoized(40); // first time
+   console.log(b);
+   let c= Memoized(20); // cache return 
+    console.log(c);
+  
+
+
+
+
+
+
+
+
+
+
+
     </script>
 </body>
 </html>
