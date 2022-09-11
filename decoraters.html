@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Decoraters</h1>
+    <ul>
+        <li>Is a function that take return a function that sets key value pairs on an object... </li>
+        <li>Looks more attractive by adding extra items...</li>
+         
+ 
+    </ul>
+    
+   <script>
+        let car={wheel:4}
+
+        function paint(c){
+            return function(car){
+                car.color=c;
+
+            }
+        }
+        paint('red')(car);
+        console.log(car);
+
+
+
+
+        
+
+    </script>
+</body>
+</html>
