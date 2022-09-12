@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Cmd</h1>
+    Microsoft Windows [Version 10.0.19043.1889]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\ASUS>mongo
+MongoDB shell version v5.0.6
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("d08f35eb-3323-4864-b23d-d7f0da11cb6d") }
+MongoDB server version: 5.0.6
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting:
+        2022-09-06T21:09:53.825+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs
+PaginationAndEmail  0.000GB
+User                0.000GB
+admin               0.000GB
+config              0.000GB
+e-comm              0.000GB
+library             0.000GB
+local               0.000GB
+search              0.000GB
+test                0.000GB
+> use test
+switched to db test
+> db
+test
+> show collections
+searches
+> db.createCollectio("people")
+uncaught exception: TypeError: db.createCollectio is not a function :
+@(shell):1:1
+> db.createCollection("people")
+{ "ok" : 1 }
+> db.people.insert({"batch":"web-16"})
+WriteResult({ "nInserted" : 1 })
+> db.people.find()
+{ "_id" : ObjectId("631f2c92bb7a7ffc6c81bae7"), "batch" : "web-16" }
+> clear
+uncaught exception: ReferenceError: clear is not defined :
+@(shell):1:1
+> use interwiewprep
+switched to db interwiewprep
+> show collections
+> db.createCollection({"name":"parul"})
+{
+        "ok" : 0,
+        "errmsg" : "collection name has invalid type object",
+        "code" : 2,
+        "codeName" : "BadValue"
+}
+> db.createCollection("name")
+{ "ok" : 1 }
+> db.name.insert({"name":"parul"})
+WriteResult({ "nInserted" : 1 })
+> db.name.find()
+{ "_id" : ObjectId("631f2dcabb7a7ffc6c81bae8"), "name" : "parul" }
+> show dbs
+PaginationAndEmail  0.000GB
+User                0.000GB
+admin               0.000GB
+config              0.000GB
+e-comm              0.000GB
+interwiewprep       0.000GB
+library             0.000GB
+local               0.000GB
+search              0.000GB
+test                0.000GB
+> use test
+switched to db test
+> show collections()
+uncaught exception: Error: don't know how to show [collections()] :
+shellHelper.show@src/mongo/shell/utils.js:1211:11
+shellHelper@src/mongo/shell/utils.js:838:15
+@(shellhelp2):1:1
+> show collections
+people
+searches
+> db.people.find()
+{ "_id" : ObjectId("631f2c92bb7a7ffc6c81bae7"), "batch" : "web-16" }
+> db.name.insertMany([{"name":"paru"},{"name":"akshu"},{"name":"parsu"},{"name":"sir"}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("631f2ee6bb7a7ffc6c81bae9"),
+                ObjectId("631f2ee6bb7a7ffc6c81baea"),
+                ObjectId("631f2ee6bb7a7ffc6c81baeb"),
+                ObjectId("631f2ee6bb7a7ffc6c81baec")
+        ]
+}
+> db.people.find({})
+{ "_id" : ObjectId("631f2c92bb7a7ffc6c81bae7"), "batch" : "web-16" }
+> db.people.insert({"name":"akki","age":25,"address":"dgfdg})
+uncaught exception: SyntaxError: "" literal not terminated before end of script :
+@(shell):1:59
+> db.people.insert({"name":"akki","age":25,"address":"dgfdg"})
+WriteResult({ "nInserted" : 1 })
+> db.people.find()
+{ "_id" : ObjectId("631f2c92bb7a7ffc6c81bae7"), "batch" : "web-16" }
+{ "_id" : ObjectId("631f2f85bb7a7ffc6c81baed"), "name" : "akki", "age" : 25, "address" : "dgfdg" }
+> db.people.find({}).pretty()
+{ "_id" : ObjectId("631f2c92bb7a7ffc6c81bae7"), "batch" : "web-16" }
+{
+        "_id" : ObjectId("631f2f85bb7a7ffc6c81baed"),
+        "name" : "akki",
+        "age" : 25,
+        "address" : "dgfdg"
+}
+> db.people.find({"age":25}).pretty()
+{
+        "_id" : ObjectId("631f2f85bb7a7ffc6c81baed"),
+        "name" : "akki",
+        "age" : 25,
+        "address" : "dgfdg"
+}
+> db.people.find({"age":26}).pretty()
+> db.people.find({"batch":"web-16"}).pretty()
+{ "_id" : ObjectId("631f2c92bb7a7ffc6c81bae7"), "batch" : "web-16" }
+> db.people.insert({"name":"tinnu","age":25,"address":"3534sfsfsfs","vpo":"pathiar})
+uncaught exception: SyntaxError: "" literal not terminated before end of script :
+@(shell):1:82
+> db.people.insert({"name":"tinnu","age":25,"address":"3534sfsfsfs","vpo":"pathiar"})
+WriteResult({ "nInserted" : 1 })
+> db.people.find({}).pretty()
+{ "_id" : ObjectId("631f2c92bb7a7ffc6c81bae7"), "batch" : "web-16" }
+{
+        "_id" : ObjectId("631f2f85bb7a7ffc6c81baed"),
+        "name" : "akki",
+        "age" : 25,
+        "address" : "dgfdg"
+}
+{
+        "_id" : ObjectId("631f30cfbb7a7ffc6c81baee"),
+        "name" : "tinnu",
+        "age" : 25,
+        "address" : "3534sfsfsfs",
+        "vpo" : "pathiar"
+}
+> db.people.find({"age":25}).pretty()
+{
+        "_id" : ObjectId("631f2f85bb7a7ffc6c81baed"),
+        "name" : "akki",
+        "age" : 25,
+        "address" : "dgfdg"
+}
+{
+        "_id" : ObjectId("631f30cfbb7a7ffc6c81baee"),
+        "name" : "tinnu",
+        "age" : 25,
+        "address" : "3534sfsfsfs",
+        "vpo" : "pathiar"
+}
+> db.people.findOne({"age":25}).pretty()
+uncaught exception: TypeError: db.people.findOne(...).pretty is not a function :
+@(shell):1:1
+> db.people.findOne({"age":25})
+{
+        "_id" : ObjectId("631f2f85bb7a7ffc6c81baed"),
+        "name" : "akki",
+        "age" : 25,
+        "address" : "dgfdg"
+}
+> db.people.findOne({"age":25,"name":"tinnu"})
+{
+        "_id" : ObjectId("631f30cfbb7a7ffc6c81baee"),
+        "name" : "tinnu",
+        "age" : 25,
+        "address" : "3534sfsfsfs",
+        "vpo" : "pathiar"
+}
+> db.people.findOne({ "_id" : ObjectId("631f2f85bb7a7ffc6c81baed")})
+{
+        "_id" : ObjectId("631f2f85bb7a7ffc6c81baed"),
+        "name" : "akki",
+        "age" : 25,
+        "address" : "dgfdg"
+}
+> db.people.find()
+{ "_id" : ObjectId("631f2c92bb7a7ffc6c81bae7"), "batch" : "web-16" }
+{ "_id" : ObjectId("631f2f85bb7a7ffc6c81baed"), "name" : "akki", "age" : 25, "address" : "dgfdg" }
+{ "_id" : ObjectId("631f30cfbb7a7ffc6c81baee"), "name" : "tinnu", "age" : 25, "address" : "3534sfsfsfs", "vpo" : "pathiar" }
+> db.people.find().pretty()
+{ "_id" : ObjectId("631f2c92bb7a7ffc6c81bae7"), "batch" : "web-16" }
+{
+        "_id" : ObjectId("631f2f85bb7a7ffc6c81baed"),
+        "name" : "akki",
+        "age" : 25,
+        "address" : "dgfdg"
+}
+{
+        "_id" : ObjectId("631f30cfbb7a7ffc6c81baee"),
+        "name" : "tinnu",
+        "age" : 25,
+        "address" : "3534sfsfsfs",
+        "vpo" : "pathiar"
+}
+> db.people.update({"batch" : "web-16"},{$set:{"year":2022}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.people.find().pretty()
+{
+        "_id" : ObjectId("631f2c92bb7a7ffc6c81bae7"),
+        "batch" : "web-16",
+        "year" : 2022
+}
+{
+        "_id" : ObjectId("631f2f85bb7a7ffc6c81baed"),
+        "name" : "akki",
+        "age" : 25,
+        "address" : "dgfdg"
+}
+{
+        "_id" : ObjectId("631f30cfbb7a7ffc6c81baee"),
+        "name" : "tinnu",
+        "age" : 25,
+        "address" : "3534sfsfsfs",
+        "vpo" : "pathiar"
+}
+> db.people.update({},{$set:{"timer":00:00}})
+uncaught exception: SyntaxError: missing } after property list :
+@(shell):1:37
+> db.people.update({},{$set:{"timer":000}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.people.updateMany({},{$set:{"timer":000}})
+{ "acknowledged" : true, "matchedCount" : 3, "modifiedCount" : 2 }
+> db.people.find().pretty()
+{
+        "_id" : ObjectId("631f2c92bb7a7ffc6c81bae7"),
+        "batch" : "web-16",
+        "year" : 2022,
+        "timer" : 0
+}
+{
+        "_id" : ObjectId("631f2f85bb7a7ffc6c81baed"),
+        "name" : "akki",
+        "age" : 25,
+        "address" : "dgfdg",
+        "timer" : 0
+}
+{
+        "_id" : ObjectId("631f30cfbb7a7ffc6c81baee"),
+        "name" : "tinnu",
+        "age" : 25,
+        "address" : "3534sfsfsfs",
+        "vpo" : "pathiar",
+        "timer" : 0
+}
+> db.people.find().pretty()
+{
+        "_id" : ObjectId("631f2c92bb7a7ffc6c81bae7"),
+        "batch" : "web-16",
+        "year" : 2022,
+        "timer" : 0
+}
+{
+        "_id" : ObjectId("631f2f85bb7a7ffc6c81baed"),
+        "name" : "akki",
+        "age" : 25,
+        "address" : "dgfdg",
+        "timer" : 0
+}
+{
+        "_id" : ObjectId("631f30cfbb7a7ffc6c81baee"),
+        "name" : "tinnu",
+        "age" : 25,
+        "address" : "3534sfsfsfs",
+        "vpo" : "pathiar",
+        "timer" : 0
+}
+> db.people.remove({ "_id" : ObjectId("631f30cfbb7a7ffc6c81baee")})
+WriteResult({ "nRemoved" : 1 })
+> db.people.find().pretty()
+{
+        "_id" : ObjectId("631f2c92bb7a7ffc6c81bae7"),
+        "batch" : "web-16",
+        "year" : 2022,
+        "timer" : 0
+}
+{
+        "_id" : ObjectId("631f2f85bb7a7ffc6c81baed"),
+        "name" : "akki",
+        "age" : 25,
+        "address" : "dgfdg",
+        "timer" : 0
+}
+> db.people.remove({"age":25},{$unset:{"timer":0}})
+WriteResult({ "nRemoved" : 1 })
+> db.people.find().pretty()
+{
+        "_id" : ObjectId("631f2c92bb7a7ffc6c81bae7"),
+        "batch" : "web-16",
+        "year" : 2022,
+        "timer" : 0
+}
+> db.people.update({"year":2022},{$unset:{"timer":50}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.people.find().pretty()
+{
+        "_id" : ObjectId("631f2c92bb7a7ffc6c81bae7"),
+        "batch" : "web-16",
+        "year" : 2022
+}
+> db.people.help()
+DBCollection help
+        db.people.find().help() - show DBCursor help
+        db.people.bulkWrite( operations, <optional params> ) - bulk execute write operations, optional parameters are: w, wtimeout, j
+        db.people.count( query = {}, <optional params> ) - count the number of documents that matches the query, optional parameters are: limit, skip, hint, maxTimeMS
+        db.people.countDocuments( query = {}, <optional params> ) - count the number of documents that matches the query, optional parameters are: limit, skip, hint, maxTimeMS
+        db.people.estimatedDocumentCount( <optional params> ) - estimate the document count using collection metadata, optional parameters are: maxTimeMS
+        db.people.convertToCapped(maxBytes) - calls {convertToCapped:'people', size:maxBytes}} command
+        db.people.createIndex(keypattern[,options])
+        db.people.createIndexes([keypatterns], <options>)
+        db.people.dataSize()
+        db.people.deleteOne( filter, <optional params> ) - delete first matching document, optional parameters are: w, wtimeout, j
+        db.people.deleteMany( filter, <optional params> ) - delete all matching documents, optional parameters are: w, wtimeout, j
+        db.people.distinct( key, query, <optional params> ) - e.g. db.people.distinct( 'x' ), optional parameters are: maxTimeMS
+        db.people.drop() drop the collection
+        db.people.dropIndex(index) - e.g. db.people.dropIndex( "indexName" ) or db.people.dropIndex( { "indexKey" : 1 } )
+        db.people.hideIndex(index) - e.g. db.people.hideIndex( "indexName" ) or db.people.hideIndex( { "indexKey" : 1 } )
+        db.people.unhideIndex(index) - e.g. db.people.unhideIndex( "indexName" ) or db.people.unhideIndex( { "indexKey" : 1 } )
+        db.people.dropIndexes()
+        db.people.explain().help() - show explain help
+        db.people.reIndex()
+        db.people.find([query],[fields]) - query is an optional query filter. fields is optional set of fields to return.
+                                                      e.g. db.people.find( {x:77} , {name:1, x:1} )
+        db.people.find(...).count()
+        db.people.find(...).limit(n)
+        db.people.find(...).skip(n)
+        db.people.find(...).sort(...)
+        db.people.findOne([query], [fields], [options], [readConcern])
+        db.people.findOneAndDelete( filter, <optional params> ) - delete first matching document, optional parameters are: projection, sort, maxTimeMS
+        db.people.findOneAndReplace( filter, replacement, <optional params> ) - replace first matching document, optional parameters are: projection, sort, maxTimeMS, upsert, returnNewDocument
+        db.people.findOneAndUpdate( filter, <update object or pipeline>, <optional params> ) - update first matching document, optional parameters are: projection, sort, maxTimeMS, upsert, returnNewDocument
+        db.people.getDB() get DB object associated with collection
+        db.people.getPlanCache() get query plan cache associated with collection
+        db.people.getIndexes()
+        db.people.insert(obj)
+        db.people.insertOne( obj, <optional params> ) - insert a document, optional parameters are: w, wtimeout, j
+        db.people.insertMany( [objects], <optional params> ) - insert multiple documents, optional parameters are: w, wtimeout, j
+        db.people.mapReduce( mapFunction , reduceFunction , <optional params> )
+        db.people.aggregate( [pipeline], <optional params> ) - performs an aggregation on a collection; returns a cursor
+        db.people.remove(query)
+        db.people.replaceOne( filter, replacement, <optional params> ) - replace the first matching document, optional parameters are: upsert, w, wtimeout, j
+        db.people.renameCollection( newName , <dropTarget> ) renames the collection.
+        db.people.runCommand( name , <options> ) runs a db command with the given name where the first param is the collection name
+        db.people.save(obj)
+        db.people.stats({scale: N, indexDetails: true/false, indexDetailsKey: <index key>, indexDetailsName: <index name>})
+        db.people.storageSize() - includes free space allocated to this collection
+        db.people.totalIndexSize() - size in bytes of all the indexes
+        db.people.totalSize() - storage allocated for all data and indexes
+        db.people.update( query, <update object or pipeline>[, upsert_bool, multi_bool] ) - instead of two flags, you can pass an object with fields: upsert, multi, hint, let
+        db.people.updateOne( filter, <update object or pipeline>, <optional params> ) - update the first matching document, optional parameters are: upsert, w, wtimeout, j, hint, let
+        db.people.updateMany( filter, <update object or pipeline>, <optional params> ) - update all matching documents, optional parameters are: upsert, w, wtimeout, j, hint, let
+        db.people.validate( <full> ) - SLOW
+        db.people.getShardVersion() - only for use with sharding
+        db.people.getShardDistribution() - prints statistics about data distribution in the cluster
+        db.people.getSplitKeysForChunks( <maxChunkSize> ) - calculates split points over all chunks and returns splitter function
+        db.people.getWriteConcern() - returns the write concern used for any operations on this collection, inherited from server/db if set
+        db.people.setWriteConcern( <write concern doc> ) - sets the write concern for writes to the collection
+        db.people.unsetWriteConcern( <write concern doc> ) - unsets the write concern for writes to the collection
+        db.people.latencyStats() - display operation latency histograms for this collection
+>
+</body>
+</html>
