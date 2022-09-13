@@ -8,6 +8,71 @@
 </head>
 <body>
     <h1>Pro1.</h1>
+
+
+
+    <h1>table1.</h1>
+    <table border="1" >
+
+        <tr>
+            <td>cell1</td>
+            <td>cell2</td>
+            <table border="1" >
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                </tr>
+            </table>
+        </tr>
+    </table>
+
+    <hr>
+
+
+    <h1>tabel2</h1>
+    <table border="1" >
+        <tr>
+            <td>cell1</td>
+            <td>cell2</td>
+            <tr>1</tr>
+            <tr>2</tr>
+        </tr>
+    </table>
+
+
+    <hr>
+    <h1>tabel3</h1>
+    <table border="1">
+        <tr>
+            <td>cell1</td>
+    <table border="1" >
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+    </table>
+    <td>cell2</td>
+        </tr>
+    </table>
+
+
+    <hr>
+
+    <h1>table4</h1>
+    
+    <table border="1" >
+        <tr>
+            <td>cell1</td>
+            <td>cell2
+                <table border="1" >
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
     <script> 
 
     // ********** que1.
@@ -60,6 +125,39 @@
 
 
 
+
+//*********que6.
+// const prod=(x)=>{
+//     x=x+5
+//     return inner=>(
+//         x*inner
+//     )
+// }
+
+// console.log( prod(5)(10)); //100
+
+
+
+
+//********que7.
+
+// printName('shoneil')
+
+// var printName=function(name){
+//     console.log('hello',name); //Uncaught TypeError: printName is not a function
+// }
+
+
+
+//********que8
+
+function value(b){
+    const a=100
+    a=b
+    return a
+}
+
+console.log(value(100)); //Uncaught TypeError: Assignment to constant variable.
     </script>
 </body>
 </html>
