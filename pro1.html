@@ -173,15 +173,82 @@
 
 
 //********que10
-   function getName(){
-    name='albery'
-   }
+//    function getName(){
+//     name='albery'
+//    }
 
-   getName()
-   console.log(name); //albery
+//    getName()
+//    console.log(name); //albery
    
    
    
-   </script>
+
+//******que11
+// var arr=new Array(5).fill(0).map(function(a,b){return b+1})
+  
+//   console.log(arr); //(5) [1, 2, 3, 4, 5]
+  
+
+
+//******que12
+//'use strict'
+// function name(){
+//     var name='masai';
+//     console.log(this.name);
+// }
+
+
+// function greet(){
+//     console.log('hello');
+// }
+
+// var arr=[{name:"nrupul"},{name:"Aman"},{name:"Albert"}];
+
+// for(var i=0;i<arr.length;i++){
+//     setTimeout(name.bind(arr[i]),0)
+//     setTimeout(greet(),0)
+// }
+  //3pro1.html:202 hello
+// pro1.html:197 nrupul
+// pro1.html:197 Aman
+// pro1.html:197 Albert
+
+
+
+
+
+//*******que13
+// function getYear(){
+//     var year=new Date().getFullYear()
+//     return year
+// }
+
+// getYear()
+// console.log(year); //Uncaught ReferenceError: year is not defined
+  
+
+
+ //********que14
+ 
+//   name=x || 'name';
+
+//   console.log(name); //name
+//   var x='Masai'
+
+
+function alpha(){
+    var name='masai'
+    console.log(this.name); //masai_school
+}
+
+
+var name='masai_school';
+alpha();
+
+
+
+
+
+  </script>
 </body>
 </html>
