@@ -236,16 +236,85 @@
 //   var x='Masai'
 
 
-function alpha(){
-    var name='masai'
-    console.log(this.name); //masai_school
-}
 
 
-var name='masai_school';
-alpha();
+//********que15
+// function alpha(){
+//     var name='masai'
+//     console.log(this.name); //masai_school
+// }
+// var name='masai_school';
+// alpha();
 
 
+//******que16
+
+// const sum=(x,y)=>{
+//     x=x || 5
+//     y= y || 10
+//     return x+y
+// }
+
+// console.log(sum(0,10)); //15 
+
+
+
+
+//*******que16
+//console.log(typeof [1,1,1] === typeof {val:1,val:1,val:1}); //true
+
+
+
+
+// ******* que17
+
+// var str='masai';
+//  var {length} =str 
+
+//  console.log(str,length); //masai 5
+
+
+//******** que18
+
+// function alpha(){
+//     var x=100
+//     this.beta()
+// }
+
+// function beta(){
+//     var x=200
+//     console.log(this.x); //undefined
+// }
+
+// alpha();
+
+
+
+
+//********* que19
+// var name="Ajay"
+// function printDetails(){
+//     console.log(this.name); //Uncaught ReferenceError: prinDetails is not defined
+// }
+
+// var person={
+
+//     name:"Haren",
+//     company:"masai",
+//     print:prinDetails()
+// }
+
+// person.print()
+
+
+
+//****** que20
+
+var arr=[1,2,3,4,5];
+let ans= arr.map(a=>a*5)
+
+console.log(arr); // (5) [1, 2, 3, 4, 5]
+console.log(ans); //(5) [5, 10, 15, 20, 25]
 
 
 
