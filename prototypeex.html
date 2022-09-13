@@ -18,5 +18,31 @@
         <li>Like every prototye internally inherit from Object.prototype  ex. --> Function.prototype.__proto__ === Object.Prototype are equal it consider for all strings, boolean, arrays, function, objects </li>
         <li>Object.prototype.__proto__ = null this is the end of the chain.</li>
     </ol>
+
+<script>
+var exmaple="something";
+
+//string
+// example.__proto__ = String {'', constructor: ƒ, anchor: ƒ, at: ƒ, big: ƒ, …}
+// String.prototype =   String {'', constructor: ƒ, anchor: ƒ, at: ƒ, big: ƒ, …}
+//String.prototype.__proto__ ={constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …} 
+// String.prototype.__proto__ === Object.prototype true
+// Object.prototype.__proto__ = null 
+
+
+
+let custom=["A","B","C"]; 
+
+
+// custom.__proto__ = [constructor: ƒ, at: ƒ, concat: ƒ, copyWithin: ƒ, fill: ƒ, …]
+//Array.prototype= [constructor: ƒ, at: ƒ, concat: ƒ, copyWithin: ƒ, fill: ƒ, …]
+//custom.__proto__ === Array.prototype true
+//Object.prototype === Array.prototype.__proto__ true
+
+
+
+</script>
+
+
 </body>
 </html>
