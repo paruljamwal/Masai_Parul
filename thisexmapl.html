@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This</h1>
+    <p>value of this depend on how we call the function</p>
+
+
+    <script>
+
+
+ const getFullName=function(city,profile){
+            console.log(this,"this"); // {firstName: 'tinnu', lastName: 'jinnu', getFullName: ƒ} 
+            console.log(`${this.firstName} ${this.lastName} and the city is ${city} and profile is ${profile} `); //tinnu jinnu 
+           }
+
+        const employee={
+           firstName:"tinnu",
+           lastName:"jinnu",
+         
+        }
+
+        // employee.getFullName();
+
+        // let getEmployeeDetails= employee.getFullName //Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+
+        // getEmployeeDetails();  //undefined undefined 
+
+        const customer={
+            firstName:"psdf",
+            lastName:"df"
+        }
+
+        // call apply bind ---> binds the context of this independent to the obj...
+    //     employee.getFullName.call(customer,"HP","Designer"); // psdf df and the city is HP and profile is Designer 
+    //     employee.getFullName.apply(customer,["Banglore","developer"]); // psdf df and the city is Banglore and profile is developer
+    //   let data=  employee.getFullName.bind(customer,"Banglore","developer");
+    //     data()
+
+
+    getFullName.call(customer,"HP","Designer"); // psdf df and the city is HP and profile is Designer 
+    getFullName.apply(customer,["Banglore","developer"]); // psdf df and the city is Banglore and profile is developer
+      let data=getFullName.bind(customer,"Banglore","developer"); // psdf df and the city is Banglore and profile is developer 
+        data()
+
+
+
+    </script>
+</body>
+</html>

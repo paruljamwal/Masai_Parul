@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>Protoytype</h1>
+    <h3>Is a object </h3>
     <ol>
         <li>when we create any object, array, string , boolean js engine add a secreat obj inside it</li>
         <li>we can access that property by doing __proto__</li>
@@ -19,8 +20,17 @@
         <li>Object.prototype.__proto__ = null this is the end of the chain.</li>
     </ol>
 
+
+    <hr>
+
+
+    <h1>Use Cases</h1>
+    <h2>1.</h2> Add new methods onto the prototype property <p> Share data to the difference instance of obj</p>
+    <h2>2.</h2> Inheritance (prototyple inheritance)
+
 <script>
-var exmaple="something";
+
+// var exmaple="something";
 
 //string
 // example.__proto__ = String {'', constructor: ƒ, anchor: ƒ, at: ƒ, big: ƒ, …}
@@ -32,13 +42,36 @@ var exmaple="something";
 
 
 
-let custom=["A","B","C"]; 
+// let custom=["A","B","C"]; 
 
 
 // custom.__proto__ = [constructor: ƒ, at: ƒ, concat: ƒ, copyWithin: ƒ, fill: ƒ, …]
 //Array.prototype= [constructor: ƒ, at: ƒ, concat: ƒ, copyWithin: ƒ, fill: ƒ, …]
 //custom.__proto__ === Array.prototype true
 //Object.prototype === Array.prototype.__proto__ true
+
+
+
+// *******************useCases***************************
+
+function User(name){
+    this.name=name;
+    // this.getDetails=function(){
+    //     console.log(this.name);
+    // }
+}
+
+User.prototype.getDetails=function(){
+    console.log(this.name);
+};
+
+let user1=new User("tinnu"); // js engine create 2 copies of constructer fun and add both the instances of objs.....
+user1.getDetails(); // User {name: 'tinnu'}
+
+let user2=new User("Pinnu"); //User {name: 'Pinnu'}
+user2.getDetails();
+
+
 
 
 
