@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Problem 2</h1>
+    <script>
+     let candidate=["A","B","C","D","E"]
+     let n=candidate.length;
+     let l=0;
+     for(let i=0;i<n;i++){
+        if(l<3){
+            let j=Math.floor(Math.random()*((n-i)-0)+0)
+            console.log(candidate[j]);     
+            // candidate[j],candidate[n-i]=candidate[n-i],candidate[j];
+            swap(j,n-i)
+          l++;
+        }
+}
+
+
+  function swap(j,n){
+    let temp=candidate[j]
+    candidate[j]=candidate[n] ;
+    candidate[n]=temp;  
+
+
+}
+
+
+
+
+    </script>
+</body>
+</html>

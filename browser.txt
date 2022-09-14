@@ -1,0 +1,68 @@
+
+
+when we use internet our first step is to click on browser(software, like--> chrome)
+and click on search engine (google.com ,  yahoo.com)
+
+browser send our requset to server
+
+Browser also call web browser 
+is a software (application software)
+used for access internet , seaarch website
+
+
+(Tim Berners lee)--->(1990) ist web browser (WWW) HTMl editor (WYSIWYG)
+renamed=Nexus
+(1994) shut down 
+(NeXt computer)-->used in fist time (main frame computer);
+
+
+
+2. Mosaic graphical web brower (1993--1997)
+supprot = image + text
+dev by NCSA --> National center for supercomputer access
+
+
+3. Netscape Navigater
+used for Home users
+also used by local peoples
+1994---2008
+American Online 
+
+
+4. Internet Explorer
+1995---> MicroSoft (2020)
+Thomas Reardon
+iE 11 (last version)
+
+
+5. Mozilla firefox (Mozilla)
+2002
+first free & open-source browser
+logo red panda
+
+
+6. Safari
+Developed by Apple
+2003
+***Apple graphical Browser
+
+
+
+7. Google chrome
+dev by google
+2008
+***cross platform web Browser
+
+
+8. Edge 
+**MicroSoft
+2015
+***cross platform web Browser
+
+
+9.Tor Browser--> the onion routing (2002)
+used by Hacker'seaarch
+ designed for---> Anonymous web surfing
+ no one see IP address , search history hide
+ possible to visit lock websites
+ Access to dark web 
