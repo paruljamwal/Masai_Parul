@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Throttle</h1>
+    
+</body>
+</html>
+
+<script>
+
+    const expensive=()=>{
+        console.log("Expensive");
+    }
+
+    
+    const throllte=(expensive,delay)=>{
+        let flag=true; // don't want to reinilize again & again
+        return function (){
+        if(flag){
+            expensive();
+            flag=false;
+        }
+        else{
+            setTimeout(() => {
+                flag=true;
+            }, delay);
+        }
+       }
+    }
+   
+    let betterExpensive=throllte(expensive,1000);
+
+    window.addEventListener("resize",betterExpensive);
+    window.addEventListener("mouseover",betterExpensive)
+    // window.addEventListener("mouseover",expensive)
+     
+    
+
+</script>
