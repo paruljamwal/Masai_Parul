@@ -8,20 +8,24 @@
 </head>
 <body>
     <h1>Throttle</h1>
-    
+    <div id="show" ></div>
 </body>
 </html>
 
 <script>
 
+    let show=document.getElementById('show')
+    let counter=1;
     const expensive=()=>{
         console.log("Expensive");
+        show.append(`Hover counter:  ${counter++}`)
     }
 
-    
+
     const throllte=(expensive,delay)=>{
         let flag=true; // don't want to reinilize again & again
         return function (){
+            clearTimeout(delay);
         if(flag){
             expensive();
             flag=false;
@@ -34,7 +38,7 @@
        }
     }
    
-    let betterExpensive=throllte(expensive,1000);
+    let betterExpensive=throllte(expensive,300);
 
     window.addEventListener("resize",betterExpensive);
     window.addEventListener("mouseover",betterExpensive)
