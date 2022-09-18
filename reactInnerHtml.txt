@@ -1,0 +1,44 @@
+import React from "react";
+import ReactQuill from "react-quill";
+import "./styles.css";
+
+export default function App() {
+  let [show,setShow]=React.useState(false);
+  let [quilData,setQuillData]=React.useState('');
+  let data=`<p>This is a p tag</p>`;
+  let box=`<div > <img src="data:image/jpeg;base64,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" /></div>`;
+ 
+  const showData=()=>{
+  setShow(!show);
+
+  }
+
+
+  const showQuill=(val)=>{
+    setQuillData(val)
+  }
+  console.log(quilData)
+  return (
+    <div className="App">
+      <div dangerouslySetInnerHTML={{__html:data}} ></div>
+     {show ? 
+         <div style={{color:"green" , border:"2px solid red", height:"200px" , background:"pink", position:"relative"}}  dangerouslySetInnerHTML={{__html:box}} ></div>
+    :
+
+    <h1>
+       Please click button to show box
+    </h1>
+    
+    }
+   
+    <button onClick={showData} >Show</button>
+ 
+
+    <div  dangerouslySetInnerHTML={{__html:quilData}} ></div>
+
+
+<ReactQuill onChange={showQuill} />
+
+    </div>
+  );
+}
