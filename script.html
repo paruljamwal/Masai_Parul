@@ -9,9 +9,13 @@
 <body>
     <h1>Script type , async , defer</h1>
      <ol>
-        <li>Type is the by default value (it runs HTML but when it encounter script tag pauses the HTML parsing at that time and start fetching and runing script tag same time when it done with fetching then again start parsing HTML.)</li>
+        <li>(Type) is the by default value (it runs HTML but when it encounter script tag pauses the HTML parsing at that time and start fetching and runing script tag same time when it done with fetching then again start parsing HTML.)</li>
         <li>(Async) Its not giving any gureented of order of execution of code so its helpful when order doesn't matter.    </li>
         <li>It starts parsing HTML and side by side it also fetching data from network .. when data present in browser execution it again  starts parsing HTML data... </li>
+        <li>(defer) It gives fully gureented of order of execution of code </li>
+        <li>Html and data fetching from network is going side by side.. but execution starts only when HTML parsing is done completly.....</li>
+        <li>So, when you want order of execution use defer</li>
+        <li>If you don't care about order of execution so you can use async...</li>
         
     </ol>
 </body>
