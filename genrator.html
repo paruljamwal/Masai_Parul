@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Generater</h1>
+    <p>we can handel the exectution of function acc. to our need .. for that we have to use yield.....</p>
+    <p>Can't create Generater function using aerro function</p>
+    <p>use * to make a function generator function</p>
+    <p>when curser points to yield it stop the exectution of the function</p>
+    <p>we can use next() to resume the function</p> 
+</body>
+
+<script>
+    function* generatorFunction(){
+        console.log("This will be executed first");
+         yield "Hello"  // stop exit.....
+         console.log("This will execute after yield");
+         yield "Bye" // stop exit.....
+    }
+
+    console.log(generatirFunction.next());
+</script>
+</html>
