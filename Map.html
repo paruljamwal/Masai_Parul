@@ -11,13 +11,40 @@
     <h1>Map in javascript</h1>
     <p>Look similar to object</p>
     <p>Key value pairs</p>
+    <p>Key will be any thing obj, string, array, (should be number as well)</p>
     <p>for checking any property use has()</p>
     <p>for setting any value use map.set</p>
 </body>
 <script>
     let map=new Map();
+
+    //   how to set value to map
+    map.set("parul","full stack developer");
+    map.set("paras","java developer");
+    // if repeated key is present... then it gives updated value
+    map.set("paras","MERN developer");
+
+
+    console.log(map); // Map(2) {'parul' => 'full stack developer', 'paras' => 'java developer'}
+    console.log(map.get("paras")); //java developer
+    console.log(map.has("parul")); // true
+
+     // How to print all the values.... in singel time
     for(let [v,k] of map){
-      console.log(k,":",v);
-    }
+      console.log(k,":",v); // full stack developer : parul
+                             //java developer : paras
+   
+    // if repeated key is present... then it gives updated value
+    //full stack developer : parul
+    //MERN developer : paras
+   
+   }
+
+
+   // by using foreach.....
+   
+   map.forEach((v,k)=>{
+    console.log(k,":",v);
+   })
 </script>
 </html>
