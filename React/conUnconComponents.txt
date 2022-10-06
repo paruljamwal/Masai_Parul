@@ -5,7 +5,7 @@
 1. is controlled by DOM only.
 2. its not refreshed the page.
 3. we can diretly communicate with DOM.
-4. example:-  take an input box take createRef() 
+4. example:-  take an input box take createRef() pass ref to input box it will not rerendered you component 
 
 
 #### controlled components....
