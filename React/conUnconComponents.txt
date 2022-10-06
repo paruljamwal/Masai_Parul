@@ -1,0 +1,15 @@
+
+
+####Uncontrolled components
+
+1. is controlled by DOM only.
+2. its not refreshed the page.
+3. we can diretly communicate with DOM.
+4. example:-  take an input box take createRef() 
+
+
+#### controlled components....
+
+1. controlled by react
+2. it rerendered by all value
+3. example:- take an input box add onChange take any function pass event and console e.target.value it gives value in every input....
