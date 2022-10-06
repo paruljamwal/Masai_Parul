@@ -11,17 +11,26 @@
         // moves zero to end
         let arr=[2,9,0,4,0,7,1,0]   
         let count=0;
-        let temp=[];
-        for(let i=0;i<arr.length;i++){
-            if(arr[i]==0) count++;
-            else temp.push(arr[i]);
-        }
+        // let temp=[];
+        // for(let i=0;i<arr.length;i++){
+        //     if(arr[i]==0) count++;
+        //     else temp.push(arr[i]);
+        // }
 
-        for(let j=0;j<count;j++){
-            temp.push(0);
-        }
+        // for(let j=0;j<count;j++){
+        //     temp.push(0);
+        // }
 
-         console.log(temp,"temp");
+        //  console.log(temp,"temp");
+
+      for(let i=0;i<arr.length;i++){
+        if(arr[i]!==0){
+            [arr[i],arr[count]]=[arr[count],arr[i]]
+            count++;
+        }
+        console.log(arr);
+    }
+    
 </script>
 </body>
 </html>
