@@ -13,7 +13,12 @@
         const cart = ["shoes","pants","kurta"];
         createOrder(cart,function(orderId){
             proceedToPayment(orderId)
-        })
+        });
+
+        createOrder(cary)
+        .then((orderId)=>proceedToPayment(orderId))
+        .then((PaymentRequest)=>showOrder(PaymentRequest))
+        .then((paymentInfo)=>updateWalletBalance(paymentInfo))
     </script>
 </body>
 </html>
