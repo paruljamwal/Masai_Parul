@@ -9,7 +9,17 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
+    <h1>Call back and promises</h1>
+    <p>callback creates a call back hell if we have number of async operations</p>
+    <p>in call back function function depend on other function</p>
+    <p>(inversion of control) we loose the power of runnig by our own</p>
+    <p>Promises are also used for handling async operations</p>
+    <p>Its simple to use : we can consume promise or produce promise</p>
+    <p>number of times we consumes promises</p>
+    <p>it takes two parameters (response,reject)</p>
+    <p>it have some methods that will we more helpfull like: Promis.race() , Promise.all() , promises.allSetlled() etc ...</p>
+    
+   <script>
         const cart = ["shoes","pants","kurta"];
         createOrder(cart,function(orderId){
             proceedToPayment(orderId)
