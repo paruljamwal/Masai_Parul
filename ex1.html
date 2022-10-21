@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>moves 0 to last in given array </h1>
+    <script>
+        const nums = [0,1,0,0,3,12];
+
+        function arrtrans(arr){
+            let countZeros = 0;
+            for(let i=0 ; i<arr.length; i++){
+                let isZero = arr[i] === 0;
+                if(isZero){
+                    countZeros++;
+                    arr.splice(i,1);
+                    i--;
+                }
+            }
+            console.log(arr);
+            for(let i=0 ; i< countZeros ; i++){
+                arr.push(0);
+            }
+            return arr;
+        }
+
+        let ans= arrtrans(nums);
+        console.log(ans);
+    </script>
+</body>
+</html>
