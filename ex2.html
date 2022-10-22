@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Swap first and last character of a string...</h1>
+    <script>
+        let num = "Parul";
+        function swap(val){
+            const length = val.length;
+            return (
+                val.charAt(length - 1) + val.substring(1,length-1) + val.charAt(0) 
+            )
+        }
+       console.log(swap(num))
+       
+    </script>
+</body>
+</html>
