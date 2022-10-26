@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="password">Password :</label>
+    <input type="password" name="password" id="password" >
+    <span id="password-message" style="display:none" >Caps Lock is on....</span>
+</body>
+</html>
+
+<script>
+    const pwd = document.getElementById("password");
+    const msg = document.getElementById("password-message");
+    pwd.addEventListener("keyup",e=>{
+        msg.style.display = e.getModifierState("CapsLock") ? "block" : "none" ;
+    })
+</script>
