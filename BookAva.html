@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Books Availability in Library..... </h1>
+    <script>
+        // availability of book is 0 return Out of stock
+        // if book < 5 return Low stock....
+        // else return In stock....
+       
+         // we can soleve this using two ways function prototype or class constructor 
+
+         // create Book
+         function Book(title, author , numCopies){
+            this.title = title;
+            this.author = author;
+            this.numCopies = numCopies;
+         }
+
+         Book.prototype.getAvailability = function(){
+            if(this.numCopies === 0){
+                return "Out of Stock";
+            }else if(this.numCopies < 5){
+                return "Low Stock";
+            }else{
+                return "In stock";
+            }
+         }
+
+         // check book sselled or not....
+         // if some one take book we have to reduce the total copies.....
+         Book.prototype.sell =function(numCopiesSold=1){
+           this.numCopies -= numCopiesSold;
+         }
+         // check book is not availavle restock the books......
+
+         Book.prototype.reStock = function(numCopiesStocked = 5){
+            this.numCopies += numCopiesStocked
+         }
+
+         // create book...
+         const HP = new Book("Harry Potter","J K rowling",5);
+         console.log(HP.getAvailability());
+    </script>
+</body>
+</html>
