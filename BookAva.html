@@ -1,60 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <h1>Books Availability in Library..... </h1>
+  </head>
+  <body>
+    <h1>Books Availability in Library.....</h1>
     <script>
-        // availability of book is 0 return Out of stock
-        // if book < 5 return Low stock....
-        // else return In stock....
-       
-         // we can soleve this using two ways function prototype or class constructor 
+      // availability of book is 0 return Out of stock
+      // if book < 5 return Low stock....
+      // else return In stock....
 
-         // create Book
-         function Book(title, author , numCopies){
-            this.title = title;
-            this.author = author;
-            this.numCopies = numCopies;
-         }
+      // we can soleve this using two ways function prototype or class constructor
 
-         Book.prototype.getAvailability = function(){
-            if(this.numCopies === 0){
-                return "Out of Stock";
-            }else if(this.numCopies < 5){
-                return "Low Stock";
-            }else{
-                return "In stock";
-            }
-         }
+      // create Book
+      //  function Book(title, author , numCopies){
+      //     this.title = title;
+      //     this.author = author;
+      //     this.numCopies = numCopies;
+      //  }
 
-         // check book sselled or not....
-         // if some one take book we have to reduce the total copies.....
-         Book.prototype.sell =function(numCopiesSold=1){
-           this.numCopies -= numCopiesSold;
-         }
-         // check book is not availavle restock the books......
+      //  Book.prototype.getAvailability = function(){
+      //     if(this.numCopies === 0){
+      //         return "Out of Stock";
+      //     }else if(this.numCopies < 5){
+      //         return "Low Stock";
+      //     }else{
+      //         return "In stock";
+      //     }
+      //  }
 
-         Book.prototype.reStock = function(numCopiesStocked = 5){
-            this.numCopies += numCopiesStocked
-         }
+      //  // check book sselled or not....
+      //  // if some one take book we have to reduce the total copies.....
+      //  Book.prototype.sell =function(numCopiesSold=1){
+      //    this.numCopies -= numCopiesSold;
+      //  }
+      //  // check book is not availavle restock the books......
 
-         // create book...
-         const HP = new Book("Harry Potter","J K rowling",5);
-         console.log(HP.getAvailability());
+      //  Book.prototype.reStock = function(numCopiesStocked = 5){
+      //     this.numCopies += numCopiesStocked
+      //  }
 
-         HP.reStock(2);
-         console.log(HP.getAvailability());
-         
-         HP.sell(25)
-         console.log(HP.getAvailability())
-         
-         HP.sell(25)
-         console.log(HP.getAvailability())
+      // or Create book using class constructor ......
+
+      class Book {
+        constructor(title, author, numcopies) {
+          this.title = title;
+          this.author = author;
+          this.numcopies = numcopies;
+        }
+        getAvailability() {
+          if (this.numCopies === 0) {
+            return "Out of Stock";
+          } else if (this.numCopies < 5) {
+            return "Low Stock";
+          } else {
+            return "In stock";
+          }
+        }
+
+        // sell function......
+        sell(numCopiesSold){
+            this.numCopies -= numCopiesSold;
+        }
+
+        reStock(numCopiesStocked){
+            this.numcopies += numCopiesStocked;
+        }
+      }
+
+      // create book...
+      const HP = new Book("Harry Potter", "J K rowling", 0);
+      console.log(HP.getAvailability());
+
+      HP.reStock(12);
+      console.log(HP.getAvailability());
+
+      HP.sell(15);
+      console.log(HP.getAvailability());
+
+
     </script>
-</body>
+  </body>
 </html>
