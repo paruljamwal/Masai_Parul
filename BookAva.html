@@ -16,32 +16,32 @@
       // we can soleve this using two ways function prototype or class constructor
 
       // create Book
-      //  function Book(title, author , numCopies){
-      //     this.title = title;
-      //     this.author = author;
-      //     this.numCopies = numCopies;
-      //  }
+    //    function Book(title, author , numCopies){
+    //       this.title = title;
+    //       this.author = author;
+    //       this.numCopies = numCopies;
+    //    }
 
-      //  Book.prototype.getAvailability = function(){
-      //     if(this.numCopies === 0){
-      //         return "Out of Stock";
-      //     }else if(this.numCopies < 5){
-      //         return "Low Stock";
-      //     }else{
-      //         return "In stock";
-      //     }
-      //  }
+    //    Book.prototype.getAvailability = function(){
+    //       if(this.numCopies === 0){
+    //           return "Out of Stock";
+    //       }else if(this.numCopies < 5){
+    //           return "Low Stock";
+    //       }else{
+    //           return "In stock";
+    //       }
+    //    }
 
-      //  // check book sselled or not....
-      //  // if some one take book we have to reduce the total copies.....
-      //  Book.prototype.sell =function(numCopiesSold=1){
-      //    this.numCopies -= numCopiesSold;
-      //  }
-      //  // check book is not availavle restock the books......
+    //    // check book sselled or not....
+    //    // if some one take book we have to reduce the total copies.....
+    //    Book.prototype.sell =function(numCopiesSold=1){
+    //      this.numCopies -= numCopiesSold;
+    //    }
+    //    // check book is not availavle restock the books......
 
-      //  Book.prototype.reStock = function(numCopiesStocked = 5){
-      //     this.numCopies += numCopiesStocked
-      //  }
+    //    Book.prototype.reStock = function(numCopiesStocked = 5){
+    //       this.numCopies += numCopiesStocked
+    //    }
 
       // or Create book using class constructor ......
 
@@ -72,7 +72,7 @@
       }
 
       // create book...
-      const HP = new Book("Harry Potter", "J K rowling", 0);
+      const HP = new Book("Harry Potter", "J K rowling", 3);
       console.log(HP.getAvailability());
 
       HP.reStock(12);
