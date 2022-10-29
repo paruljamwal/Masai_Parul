@@ -53,11 +53,11 @@
         }
         getAvailability() {
           if (this.numCopies === 0) {
-            return "Out of Stock";
+            return "Books Out of Stock";
           } else if (this.numCopies < 5) {
-            return "Low Stock";
+            return "Books have Low Stock";
           } else {
-            return "In stock";
+            return "Books In stock";
           }
         }
 
