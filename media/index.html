@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <head>
+        <style>
+            .main{
+                border: 5px solid black;
+                width: 95%;
+                margin: auto;
+                display: flex;
+            }
+
+            .main > div{
+                border: 1px solid gray;
+                width: 33%;
+                margin: 10px;
+
+            }
+            .title{
+                padding: 10px ;  
+                
+            }
+            /* .poster{
+                border: 1px saddlebrown solid;
+            } */
+
+            img{
+                width: 100%;
+             background-size: contain;
+            }
+
+            @media  (max-width:599px) {
+                .main{
+                    flex-direction: column;
+                }
+
+                .main > div{
+                border: 1px solid gray;
+                width: 100%;
+                margin: 5px;
+
+            }
+
+            img{
+                width: 99%;
+             background-size: contain;
+            }
+            }
+
+        </style>
+</head>
+<body>
+    <div class="main">
+        <div class="post1">
+            <div class="poster">
+                <img src="https://via.placeholder.com/300x200" alt="">
+            </div>
+        <div class="title" >
+            <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, cupiditate a! Impedit, incidunt vel qui magni architecto consectetur. Facilis officia quaerat quia, beatae ipsa debitis voluptates voluptatem ducimus. Sint, amet.</h3>
+            <span> By <b>Alexa Managing</b>  Esaaf </span>
+        </div>
+        </div>
+        <div class="post2">
+            <div>
+                <img src="https://via.placeholder.com/300x200" alt="">
+            </div>
+            <div  class="title">
+                <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, cupiditate a! Impedit, incidunt vel qui magni architecto consectetur. Facilis officia quaerat quia, beatae ipsa debitis voluptates voluptatem ducimus. Sint, amet.</h3>
+
+            <span> By <b>Alexa Managing</b>  Esaaf </span>
+
+            </div>
+        </div>
+        <div class="post3">
+
+  <div>
+      <img src="https://via.placeholder.com/300x200" alt="">
+    </div>
+    <div  class="title">
+        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, cupiditate a! Impedit, incidunt vel qui magni architecto consectetur. Facilis officia quaerat quia, beatae ipsa debitis voluptates voluptatem ducimus. Sint, amet.</h3>
+  
+    <span> By <b>Alexa Managing</b>  Esaaf </span>
+
+    </div>
+        </div>
+    </div>
+
+    <script>
+        // let tit= document.getElementsByClassName("title");
+    
+        // console.log(tit);
+        // function calltitle(){
+        //     alert("Hello title")
+        // }
+        // tit.addEventListner("click",calltitle)
+
+
+
+        // var a = 1;
+        // a = 3;
+
+
+
+
+    </script>
+</body>
+</html>
