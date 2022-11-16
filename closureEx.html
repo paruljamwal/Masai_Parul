@@ -1,77 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        .selected{
- background-color: purple; 
-}
+      .selected {
+        background-color: purple;
+      }
 
-li{
-  cursor: pointer;
-  padding: 5px;
-  margin: 5px;
-}
+      li {
+        cursor: pointer;
+        padding: 5px;
+        margin: 5px;
+      }
 
-h2{
-  background-color: pink;
-}
+      h2 {
+        background-color: pink;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <h2 id="count"></h2>
 
-    <h2  id="count"></h2>
-
-<h3>Shopping List....</h3>
-<ul>
- <li class="item">Phone</li>
- <li class="item">Doll</li>
- <li class="item">Mac</li>
- <li class="item">Computer</li>
- <li class="item">Car</li>
- <li class="item">Dresses</li>
-
- </ul>
+    <h3>Shopping List....</h3>
+    <ul>
+      <li class="item">Phone</li>
+      <li class="item">Doll</li>
+      <li class="item">Mac</li>
+      <li class="item">Computer</li>
+      <li class="item">Car</li>
+      <li class="item">Dresses</li>
+    </ul>
     <script>
-        let items = document.getElementsByClassName("item");
+      let items = document.getElementsByClassName("item");
 
-let cartCounter=function() {
+      let cartCounter = function () {
+        let count = 0;
+        return {
+          increament: () => (count += 1),
+          decreament: () => (count -= 1),
+          totalCount: () => count,
+        };
+      };
 
-let count=0;
-return {
- increament:()=>count+=1,
- decreament:()=>count-=1,
- totalCount:()=>count,
-}
-}
+      let ans = cartCounter();
 
-let ans = cartCounter();
+      function updateCount() {
+        document.getElementById("count").innerHTML =
+          ans.totalCount() + " items";
+      }
 
-function updateCount(){
-document.getElementById("count").innerHTML = ans.totalCount()+" items";
-
-}
-
-for(let i=0 ; i<items.length ; i++){
-  items[i].addEventListener("click",function(){
-
-   if(this.className.indexOf("selected")<0){
-   this.className += " selected";
-   ans.increament()
-   updateCount()
-
-   }
-   else{
-   this.className = this.className.replace("selected","");
-   ans.decreament()
-   updateCount();
-  
-   }
-  })
-}
+      for (let i = 0; i < items.length; i++) {
+        items[i].addEventListener("click", function () {
+          if (this.className.indexOf("selected") < 0) {
+            this.className += " selected";
+            ans.increament();
+            updateCount();
+          } else {
+            this.className = this.className.replace("selected", "");
+            ans.decreament();
+            updateCount();
+          }
+        });
+      }
     </script>
-</body>
+  </body>
 </html>
