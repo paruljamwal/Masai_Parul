@@ -1,0 +1,11 @@
+
+React Fibre.....
+
+1> Its a new version of React and we can say enhancement in react features.
+2> It's mainly focus in Responsiveness and animations.
+3> Fibre priorities the task those who have high priorities that run first & other one later.
+4> Like if we press button and make some changes in some text by click that button and on the other side we make a 
+   network request to fetch data from API . so clicking button have the high priorities than fetching data from the server.
+   so, higher priorities functionallity run first.
+5> It is helpfull to enhance the performance of the web......
+   
