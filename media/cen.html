@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body,html {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .iner {
+        border-radius: 50%;
+        background: rgb(117, 244, 117);
+        width: 300px;
+        height: 300px;
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+        /* display: grid;
+        place-content: center; */
+        position: relative;
+        box-shadow: 0 0 10px rgb(20, 160, 220);
+        animation: rotateBox 10s linear infinite ;
+      }
+
+      .b {
+        background:  rgb(105, 205, 244);
+        border: 2px solid crimson;
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        box-shadow: 0 0 20px crimson;
+        animation: rotateBox 25s  30s 5 linear ease-in infinite  ;
+        text-align: center;
+         font-size: xx-large;
+      }
+
+      @keyframes rotateBox {
+         0%{
+           transform: rotate(2deg);
+         }
+         15%{
+            transform: rotate(20deg);
+            
+         }
+         25%{
+            transform: rotate(30deg);
+
+         }
+         40%{
+            transform: rotate(35deg);
+
+         }
+         50%{
+            transform: rotate(90deg);
+
+         }
+         75%{
+           transform: rotate(180deg);
+            
+         }
+         100%{
+            transform: rotate(360deg);
+
+         }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="iner">
+      <div class="b">
+        🌷
+      </div>
+    </div>
+  </body>
+</html>

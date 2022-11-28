@@ -1,0 +1,7 @@
+#optimization Techniques....
+
+1. useMemo 
+2. useCallback
+3. LazyLoading
+4. pureComponents
+5. useTransition
