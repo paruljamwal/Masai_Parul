@@ -1,0 +1,40 @@
+let a=[1,2,3,4];
+
+// for(let i=0;i<a.length;i++){
+//   let pro=1;
+//   for(let j=0;j<a.length;j++){
+//     if(i==j){
+//       continue
+//     }
+//     else{
+//      pro=pro*a[j] 
+//     }
+    
+//   }
+//   console.log(pro)
+// }
+function productSele(a) {
+let left=new Array(a.length);
+left[0]=1;
+let pro=1;
+for(let i=0;i<a.length;i++){
+  pro=pro*a[i-1]
+  left[i]=pro;
+}
+pro=1;
+  let right=new Array(a.length);
+  right[a.length-1]=1;
+  for(let i=a.length-1;i>=0;i--){
+    pro=pro*a[i+1];
+    right[i]=pro;
+  }
+
+  let ans = new Array(a.length);
+  for(let i=0;i<a.length;i++){
+    ans[i]=left[i]*right[i];
+  }
+console.log(ans,"ans");
+  
+}
+
+productSele(a);
