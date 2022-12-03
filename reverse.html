@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        ma()
+        let stack=[];
+        function ma(){
+            stack.push(2)
+            stack.push(4)
+            stack.push(5)
+            stack.push(7)
+            stack.push(3)
+            stack.push(1)
+             console.log(stack);
+             rev();
+            }
+
+            function rev(){
+                if(stack.length>=0){
+                    let x = stack.peek();
+                    stack.pop();
+                    rev()
+                    insert();
+                }
+            }
+
+            function insert(x){
+                if(stack.length==0){
+                    stack.push(x)
+                }
+                else{
+                    let a=stack.peek()
+                    stack.pop()
+                    insert()
+                    stack.push()
+                }
+            }
+    </script>
+</body>
+</html>
