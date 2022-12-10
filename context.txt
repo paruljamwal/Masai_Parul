@@ -1,0 +1,26 @@
+
+
+# context api....
+1. suppose we have a nested herireracky eg. 
+   
+    A  - parent
+    B  - child B
+    C  - child C
+    D  - child D 
+
+and we have to pass data from parent A to child D .. 
+
+Now :-
+    we have three approches to solve these problems..
+
+    1. we can send data deep down to every child as a prop.. 
+    but by using this way we send data to those childs as well they don't have 
+    any need to this data. so this is a wastage of time as well as memory....
+
+    2. we can use context Api for this problem as well. context Api is like a seperate store
+    its like a provider and consumer . we can make one component as a data provider. 
+    and where you want to use these data you can get data provider their only you have to
+    wrap your data by using this provider..
+
+    
+    
