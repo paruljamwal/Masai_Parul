@@ -22,5 +22,12 @@ Now :-
     and where you want to use these data you can get data provider their only you have to
     wrap your data by using this provider..
 
-    
+    ex:- let data = createContext();
+          data.provider and you have to pass value as welll
+          and where you want to use wrap by data.Consumer 
+
+          you can also use useContext() hook for consuming context Api 
+
+    3. If the problem is to complex like you have a very nested herireracky . so yu can also go width
+       **REDUX** for central storage management. It make your work very easy....      
     
