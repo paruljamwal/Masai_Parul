@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = "abcba";
+        // let bag={};
+        // for(let i=0;i<str.length;i++){
+        //     if(bag[str[i]]==undefined){
+        //         bag[str]=1;
+        //     }
+        //     else{
+        //         bag[str]++;
+        //     }
+        //     console.log(bag)
+        // }
+
+        function nonDup(str){
+           for(let i=0;i<str.length;i++){
+            let j=str.charAt(i);
+            console.log(j,str.indexOf(j),str.lastIndexOf(j));
+            if(str.indexOf(j)===str.lastIndexOf(j)){
+                return j
+            }
+           }
+        }
+    let ans = nonDup(str);
+    console.log(ans);
+    </script>
+</body>
+</html>
